@@ -33,7 +33,7 @@ pipeline {
                                     sshTransfer(
                                         sourceFiles: 'dist/trainSchedule.zip', // Files to upload to a server.
                                         removePrefix: 'dist/', // First part of the file path that should not be created on the remote server.
-                                        remoteDirectory: '/tmp', //This folder will be below the one in the global configuration, if present.
+                                        remoteDirectory: '/saleem', //This folder will be below the one in the global configuration, if present.
 								//The folder will be created if does not exist
                                         execCommand: 'sudo /usr/bin/systemctl stop train-schedule && rm -rf /opt/train-schedule/* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule && sudo /usr/bin/systemctl start train-schedule'
                                     )
